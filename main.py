@@ -41,6 +41,11 @@ async def root():
     """Page d'accueil du serveur relais"""
     return {"message": "FloDrama Scraping Relay - Serveur opérationnel"}
 
+@app.get("/ping")
+async def ping():
+    """Endpoint de ping pour vérifier que le serveur est opérationnel"""
+    return {"status": "ok", "message": "Le serveur relais est opérationnel", "timestamp": time.time()}
+
 @app.post("/scrape")
 async def scrape(request: ScrapeRequest):
     """

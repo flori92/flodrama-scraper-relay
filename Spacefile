@@ -1,0 +1,10 @@
+v: 0
+micros:
+  - name: flodrama-scraper
+    src: .
+    engine: python3.9
+    primary: true
+    public: true
+    presets:
+      api: true
+    run: uvicorn main:app
